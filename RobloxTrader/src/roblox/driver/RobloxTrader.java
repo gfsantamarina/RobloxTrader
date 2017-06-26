@@ -18,7 +18,7 @@ public class RobloxTrader {
 		GO, PAUSE, PAUSE_TRADING, STOP, STOPPED
 	};
 
-	private LoopControl loopControl = LoopControl.GO;
+    private LoopControl loopControl = LoopControl.GO;
 	private RobloxTraderEventListener eventListener;
 
 	Scanner input = new Scanner(System.in);

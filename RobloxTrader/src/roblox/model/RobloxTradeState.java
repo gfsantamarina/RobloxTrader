@@ -7,9 +7,9 @@ public class RobloxTradeState {
 
 	public enum Currency {
 		ROBUX, TICKETS
-	};
+	}
 
-	// Inputs
+    // Inputs
 	Date snapshotTaken;
 	long robuxBalance;
 	long ticketsBalance;

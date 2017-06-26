@@ -9,8 +9,8 @@ public interface RobloxTraderEventListener extends EventListener {
 
 	public void traderStopped();
 
-	public void stateChanged(RobloxTradeState aTradeState);
+	void stateChanged(RobloxTradeState aTradeState);
 
-	public void loopControlChanged(LoopControl loopControlState);
+	void loopControlChanged(LoopControl loopControlState);
 
 }

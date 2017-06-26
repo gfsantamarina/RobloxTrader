@@ -1,18 +1,19 @@
 package roblox.driver;
 
+
 import roblox.model.Order;
 import roblox.model.RobloxTradeState;
 import roblox.model.RobloxTradeState.Currency;
 import roblox.model.BUXTIXTradeOrder;
 
-public class RobloxDecisionEngine {
+class RobloxDecisionEngine {
 
-	int minTradeSpreadThreshold = -50;
-	int maxTradeSpreadThreshold = 100;
-	int maxROBUXSpreadThreshold = 400;
-	int minTicketsSpreadThreshold = -400;
+    private int minTradeSpreadThreshold = -50;
+	private int maxTradeSpreadThreshold = 100;
+	private int maxROBUXSpreadThreshold = 400;
+	private int minTicketsSpreadThreshold = -400;
 
-	public void decide(RobloxTradeState aTradeState) {
+	void decide(RobloxTradeState aTradeState) {
 		// Check for no open positions
 		if (!aTradeState.hasOpenROBUXPositions() && !aTradeState.hasOpenTicketsPositions()) {
 			if (aTradeState.getRobuxBalance() > 0 && !aTradeState.isAnyTopOrderAtMarket()

@@ -147,7 +147,7 @@ public class RobloxInterface {
 		setDriverTimeout(10); // Bump the timeout back to 10 secs
 
 		return new RobloxTradeState(now, (Long) balanceFormat.parse(ROBUXBalance),
-				(Long) balanceFormat.parse(TicketsBalance), (Long) Long.parseLong(Spread), extractOrders(ROBUXOrders),
+				(Long) balanceFormat.parse(TicketsBalance), Long.parseLong(Spread), extractOrders(ROBUXOrders),
 				extractOrders(TicketOrders), extractPositions(OpenROBUXPositions),
 				extractPositions(OpenTicketsPositions));
 	}
