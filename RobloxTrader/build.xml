@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="SeleniumTest">
+    <property environment="env"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="Selenium-2.25.0.location" value="../Selenium-2.25.0"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="../../../../../Program Files/eclipse.juno/plugins/org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar"/>
+        <pathelement location="../../../../../Program Files/eclipse.juno/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+    </path>
+    <path id="Selenium-2.25.0.classpath">
+        <pathelement location="${Selenium-2.25.0.location}/libs/apache-mime4j-0.6.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/bsh-1.3.0.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/cglib-nodep-2.1_3.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/commons-codec-1.6.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/commons-collections-3.2.1.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/commons-exec-1.1.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/commons-io-2.0.1.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/commons-jxpath-1.3.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/commons-lang-2.6.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/commons-logging-1.1.1.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/cssparser-0.9.5.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/guava-12.0.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/hamcrest-core-1.1.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/hamcrest-library-1.1.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/htmlunit-2.9.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/htmlunit-core-js-2.9.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/httpclient-4.1.3.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/httpcore-4.1.3.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/httpmime-4.1.3.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/ini4j-0.5.2.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/jcommander-1.13.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/jna-3.4.0.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/jna-platform-3.4.0.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/json-20080701.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/junit-dep-4.10.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/nekohtml-1.9.15.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/netty-3.2.7.Final.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/operadriver-0.14.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/protobuf-java-2.4.1.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/sac-1.3.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/serializer-2.7.1.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/testng-6.0.1-nobsh-noguice.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/webbit-0.4.8-SNAPSHOT.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/xalan-2.7.1.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/xercesImpl-2.9.1.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/libs/xml-apis-1.3.04.jar"/>
+        <pathelement location="${Selenium-2.25.0.location}/selenium-java-2.25.0.jar"/>
+    </path>
+    <path id="SeleniumTest.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+        <path refid="Selenium-2.25.0.classpath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall">
+        <ant antfile="build.xml" dir="${Selenium-2.25.0.location}" inheritAll="false" target="clean"/>
+    </target>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="build.xml" dir="${Selenium-2.25.0.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="SeleniumTest.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="ExtractVariablesTestCase">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="com.example.tests.ExtractVariablesTestCase" todir="${junit.output.dir}"/>
+            <classpath refid="SeleniumTest.classpath"/>
+        </junit>
+    </target>
+    <target name="OpenBidsContentTestCase">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="com.example.tests.OpenBidsContentTestCase" todir="${junit.output.dir}"/>
+            <classpath refid="SeleniumTest.classpath"/>
+        </junit>
+    </target>
+    <target name="RobloxInterfaceTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="com.example.tests.RobloxInterfaceTest" todir="${junit.output.dir}"/>
+            <classpath refid="SeleniumTest.classpath"/>
+        </junit>
+    </target>
+    <target name="RobloxTrader">
+        <java classname="roblox.driver.RobloxTrader" failonerror="true" fork="yes">
+            <arg line="&quot;C:\Users\George\AppData\Roaming\Mozilla\Firefox\Profiles\s3wizz59.default&quot; &quot;C:\Users\George\Desktop\RobloxOutput.csv&quot;"/>
+            <classpath refid="SeleniumTest.classpath"/>
+        </java>
+    </target>
+    <target name="SeleniumTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="com.example.tests.ExtractVariablesTestCase" todir="${junit.output.dir}"/>
+            <test name="com.example.tests.OpenBidsContentTestCase" todir="${junit.output.dir}"/>
+            <test name="com.example.tests.RobloxInterfaceTest" todir="${junit.output.dir}"/>
+            <classpath refid="SeleniumTest.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>
