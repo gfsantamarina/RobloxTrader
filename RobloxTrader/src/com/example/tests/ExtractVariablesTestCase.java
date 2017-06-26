@@ -42,9 +42,9 @@ public class ExtractVariablesTestCase {
 	public void loginUser() throws Exception {
 		driver.findElement(By.id("txtUsername")).click();
 		driver.findElement(By.id("txtUsername")).clear();
-		driver.findElement(By.id("txtUsername")).sendKeys("jayhawk8d");
+		driver.findElement(By.id("txtUsername")).sendKeys("XXX");
 		driver.findElement(By.id("txtPassword")).clear();
-		driver.findElement(By.id("txtPassword")).sendKeys("r0bl0x");
+		driver.findElement(By.id("txtPassword")).sendKeys("XXX");
 		driver.findElement(By.linkText("Sign In")).click();
 		driver.findElement(By.linkText("Trade")).click();
 		driver.findElement(By.linkText("Trade Currency")).click();
